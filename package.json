@@ -1,0 +1,24 @@
+{
+  "name": "babel-transpile",
+  "version": "1.0.0",
+  "description": "Codecademy Course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachCase/minesweeper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZachCase/minesweeper/issues"
+  },
+  "homepage": "https://github.com/ZachCase/minesweeper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
+  }
+}
