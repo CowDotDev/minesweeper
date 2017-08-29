@@ -1,28 +1,4 @@
-class Game {
-    constructor(numOfRows, numOfColumns, numOfBombs) {
-        this._board = new Board(numOfRows, numOfColumns, numOfBombs);
-    }
-
-    playMove(rowIndex, columnIndex) {
-        if((rowIndex >= 0) && (rowIndex < this._board._playerBoard.length) && (columnIndex >= 0) && (columnIndex < this._board._playerBoard[0].length)) {
-            this._board.flipTile(rowIndex, columnIndex);
-            if(this._board._playerBoard[rowIndex][columnIndex] === 'B') {
-                // The flipped tile was a Bomb!
-                this._board.printBoard("Game Over!");
-            } else if(!this._board.hasSafeTile) {
-                // The flipped tile was the last safe tile... you win!
-                this._board.printBoard("You Win!");
-            } else {
-                // The game continues...
-                this._board.printBoard("Current Board:");
-            }
-        } else {
-            this._board.printBoard("Invalid Move! Current Board:");
-        }
-    }
-}
-
-class Board {
+export class Board {
     constructor(numOfRows, numOfColumns, numOfBombs) {
         this._numOfBombs = numOfBombs;
         this._numOfTiles = numOfRows * numOfColumns;
@@ -115,7 +91,3 @@ class Board {
         return board;
     }
 };
-
-// Let's Play!
-const game = new Game(20,20,10);
-game.playMove(20,14);
